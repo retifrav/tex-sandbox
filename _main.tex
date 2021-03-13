@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper,english]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% отступы на странице
+%\usepackage[top=1.5cm,left=2cm,right=2cm,bottom=1.5cm]{geometry}
+
+\usepackage{setspace}
+% размер шрифта в подписях
+\usepackage{caption}
+\captionsetup[figure]{font={scriptsize,stretch=1.0}}
+
+% абзацный отступ
+\parindent=10mm
+% отделять первую строку раздела абзацным отступом тоже
+\usepackage{indentfirst}
+% междустрочное расстояние
+\renewcommand{\baselinestretch}{1.1}
+% расстояние между абзацами
+\parskip=0.75em
+
+% картинки
+\usepackage{graphicx}
+% if you don't want to add img/ for every image
+%\graphicspath{{img/}}
+
+% дополнительные цвета
+% https://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips
+\usepackage[dvipsnames]{xcolor}
+
+% ссылки
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=black%MidnightBlue
+}
+
+% список источников
+\usepackage[
+    backend=biber,
+    giveninits=true,
+    style=authoryear,%alphabetic
+    sorting=nyt
+]{biblatex}
+% запятая между автором и годом
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+% показывать реальные label ID
+%\usepackage[notcite, notref]{showkeys}
+% расстояние между источниками в списке
+\setlength\bibitemsep{1.5\itemsep}
+% файл с источниками
+\addbibresource{./bibliography.bib}
+% фильтры для группировки источников
+\defbibfilter{none}{type=none}
+\defbibfilter{misc}{not type=article and not type=book}
+
+% делать ссылкой всё значение источника
+\DeclareCiteCommand{\cite}[\mkbibparens]
+{\usebibmacro{prenote}}
+{\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{cite}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+% а не только год
+\DeclareCiteCommand*{\cite}[\mkbibparens]
+{\usebibmacro{prenote}}
+{\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+% и то же самое отдельно для когда надо только год
+\DeclareCiteCommand{\citeyear}[\mkbibparens]
+{\usebibmacro{prenote}}
+{\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\input{./1-intro.tex}
+
+\newpage
+\printbibliography[heading=bibintoc,filter=misc]
+\printbibliography[heading=subbibintoc,type=book,title={Books}]
+\printbibliography[heading=subbibintoc,type=article,title={Articles}]
+%\printbibliography[heading=subbibintoc,filter=misc,title={Misc}]
+
+\end{document}
