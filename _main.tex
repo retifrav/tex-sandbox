@@ -20,6 +20,10 @@
 % расстояние между абзацами
 \parskip=0.75em
 
+% без отступа у списков
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
 % картинки
 \usepackage{graphicx}
 % if you don't want to add img/ for every image
@@ -43,7 +47,8 @@
     backend=biber,
     giveninits=true,
     style=authoryear,%alphabetic
-    sorting=nyt
+    sorting=nyt,
+    maxnames=2
 ]{biblatex}
 % запятая между автором и годом
 \renewcommand*{\nameyeardelim}{\addcomma\space}
