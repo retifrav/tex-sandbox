@@ -8,5 +8,9 @@
 *.run.xml
 *.gz
 *.toc
+*.fls
+*.fdb_latexmk
 
 .DS_Store
+
+*.sublime-*
