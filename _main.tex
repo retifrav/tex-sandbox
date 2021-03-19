@@ -28,7 +28,7 @@
 \usepackage{graphicx}
 % if you don't want to add img/ for every image
 %\graphicspath{{img/}}
-
+% обтекание фигуры/картинки текстом
 \usepackage{wrapfig}
 
 % дополнительные цвета
@@ -44,10 +44,13 @@
     citecolor=black%MidnightBlue
 }
 
+\usepackage{csquotes}
+
 % список источников
 \usepackage[
     backend=biber,
     giveninits=true,
+    uniquename=init,
     style=authoryear-comp,%authoryear,%alphabetic
     sorting=nyt,
     maxnames=2

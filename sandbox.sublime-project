@@ -1,0 +1,28 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+            "folder_exclude_patterns": [
+                ".git"
+            ],
+            "file_exclude_patterns": [
+                "*.aux",
+                "*.bbl",
+                "*.bcf",
+                "*.blg",
+                "*.log",
+                "*.out",
+                "*.pdf",
+                "*.xml",
+                "*.gz",
+                "*.toc",
+                "*.fdb_latexmk",
+                "*.fls"
+            ]
+		}
+	],
+    "settings": {
+        "TEXroot": "_main.tex"
+    }
+}
