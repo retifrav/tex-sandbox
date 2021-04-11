@@ -46,6 +46,34 @@
 
 \usepackage{csquotes}
 
+% исходники, подсветка синтаксиса
+\usepackage{listings}
+% шрифт для блоков кода
+\usepackage{courier}%DejaVuSansMono
+% стиль для Python
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+\lstdefinestyle{py}
+{
+    language=Python,
+    frame=l,
+    framesep=5pt,
+    captionpos=b,
+    numbers=left,
+    numberstyle=\tiny,
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    commentstyle=\color{greencomments},
+    keywordstyle=\color{bluekeywords},
+    stringstyle=\color{redstrings},
+    basicstyle=\footnotesize\ttfamily,
+}
+
 % список источников
 \usepackage[
     backend=biber,

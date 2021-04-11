@@ -93,3 +93,23 @@ All submissions and thesis are required to have a reference list. The list shoul
 \section*{Header without number}
 
 It's also not tracked by ToC.
+
+\newpage
+
+\section{Code blocks}
+
+\begin{lstlisting}[style=py]
+import sys
+import pathlib
+import subprocess
+
+# no path provided
+if len(sys.argv) < 2:
+    print("No path to original / hi-res icon provided")
+    raise SystemExit
+
+# too many arguments
+if len(sys.argv) > 2:
+    print("Too many arguments")
+    raise SystemExit
+\end{lstlisting}
