@@ -31,6 +31,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Formulas}
+\label{sec:frmls} % this is the bookmark for the, links which refers to the last section
 
 Inline: $x^2 - 3\cdot y = \psi$
 
@@ -113,3 +114,14 @@ if len(sys.argv) > 2:
     print("Too many arguments")
     raise SystemExit
 \end{lstlisting}
+
+\section{Stuff}
+
+% link to the section with the variable name
+Take a look at \hyperref[sec:frmls]{section with formulas}.
+
+% link to the section showing the name of the section
+No, you should really take a look at \nameref{sec:frmls}.
+
+% link to the section showing the description of the section
+I insist that you take a look at \autoref{sec:frmls}.
