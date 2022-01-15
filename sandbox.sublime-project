@@ -1,8 +1,8 @@
 {
-	"folders":
-	[
-		{
-			"path": ".",
+    "folders":
+    [
+        {
+            "path": ".",
             "folder_exclude_patterns": [
                 ".git"
             ],
@@ -20,8 +20,8 @@
                 "*.fdb_latexmk",
                 "*.fls"
             ]
-		}
-	],
+        }
+    ],
     "settings": {
         "TEXroot": "_main.tex"
     }

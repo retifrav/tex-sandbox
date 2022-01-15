@@ -28,6 +28,7 @@
 \usepackage{graphicx}
 % if you don't want to add img/ for every image
 %\graphicspath{{img/}}
+\usepackage{subfigure}
 % обтекание фигуры/картинки текстом
 \usepackage{wrapfig}
 
@@ -80,6 +81,7 @@
     giveninits=true,
     uniquename=init,
     style=authoryear-comp,%authoryear,%alphabetic
+    %dashed=false,
     sorting=nyt,
     maxnames=2
 ]{biblatex}
@@ -123,6 +125,7 @@
 \newpage
 
 \input{./1-intro.tex}
+\input{./2-some.tex}
 
 \newpage
 \printbibliography[heading=bibintoc,filter=misc]
