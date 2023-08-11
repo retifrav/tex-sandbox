@@ -38,10 +38,20 @@
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt}
 
+% https://tex.stackexchange.com/a/54891/80037
+%
+\usepackage[abspath]{currfile}
+%
+\usepackage{currfile-abspath}
+\getmainfile % get real main file (can be different than jobname in some cases)
+\getabspath{\themainfile} % or use \jobname.tex instead (not as safe)
+\let\mainabsdir\theabsdir % save the result (macro will be overwritten by the next \getabspath
+\let\mainabspath\theabspath % save the result (macro will be overwritten by the next \getabspath
+
 % картинки
 \usepackage{graphicx}
 % if you don't want to add img/ for every image
-%\graphicspath{{img/}}
+%\graphicspath{{./img/}} % \mainabsdir % \currfileabsdir
 \usepackage{subfigure}
 % обтекание фигуры/картинки текстом
 \usepackage{wrapfig}
